@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>{{ seo.title }}</title>
+    <meta name="description" content="{{ seo.description }}">
+    <meta name="keywords" content="{{ seo.keywords }}">
+    <link rel="canonical" href="{{ seo.canonical }}">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="{{ seo.title }}">
+    <meta property="og:description" content="{{ seo.description }}">
+    <meta property="og:url" content="{{ seo.canonical }}">
+    <meta property="og:site_name" content="{{ site_name }}">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{ seo.title }}">
+    <meta name="twitter:description" content="{{ seo.description }}">
+
+    <script type="application/ld+json">
+        {{ schema_org | tojson(indent=2) }}
+    </script>
+
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1 class="site-logo">{{ site_name }}</h1>
+
+            <nav class="main-nav">
+                <a href="/matches/yesterday" class="{% if current_slug == 'yesterday' %}active{% endif %}">
+                    Вчера
+                </a>
+                <a href="/matches/today" class="{% if current_slug == 'today' %}active{% endif %}">
+                    Сегодня
+                </a>
+                <a href="/matches/tomorrow" class="{% if current_slug == 'tomorrow' %}active{% endif %}">
+                    Завтра
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        {% block content %}{% endblock %}
+    </main>
+</body>
+</html>

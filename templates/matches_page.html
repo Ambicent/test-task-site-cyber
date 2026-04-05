@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <section class="page-header">
+        <h2>{{ page_title }}</h2>
+        <p class="page-date">Дата: {{ target_date }}</p>
+    </section>
+
+{% if api_error %}
+    <div class="error-box">
+        {{ api_error }}
+    </div>
+{% endif %}
+
+    {% if matches %}
+        <section class="matches-list">
+            {% for match in matches %}
+                <article class="match-card">
+                    <h3>{{ match.team1 }} vs {{ match.team2 }}</h3>
+                    <p><strong>Игра:</strong> {{ match.videogame }}</p>
+                    <p><strong>Лига:</strong> {{ match.league_name }}</p>
+                    <p><strong>Турнир:</strong> {{ match.tournament_name }}</p>
+                    <p><strong>Начало:</strong> {{ match.begin_at }}</p>
+                    <p><strong>Статус:</strong> {{ match.status }}</p>
+                </article>
+            {% endfor %}
+        </section>
+    {% else %}
+        <p>Матчи не найдены.</p>
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Генерация завершена</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <main class="container" style="padding: 40px 0;">
+        <h1>Страницы успешно сгенерированы</h1>
+
+        <p>Ниже список созданных файлов:</p>
+
+        <ul>
+            {% for file in generated_files %}
+                <li>{{ file }}</li>
+            {% endfor %}
+        </ul>
+
+        <h2>Открыть страницы</h2>
+        <ul>
+            <li><a href="/matches/yesterday">Матчи за вчера</a></li>
+            <li><a href="/matches/today">Матчи на сегодня</a></li>
+            <li><a href="/matches/tomorrow">Матчи на завтра</a></li>
+        </ul>
+
+        <p>
+            <a href="/" class="generate-btn">Вернуться на главную</a>
+        </p>
+    </main>
+</body>
+</html>
