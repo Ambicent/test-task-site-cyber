@@ -3,4 +3,4 @@ __pycache__/
 .env
 *.pyc
 generated/*.html
-.idea
+.idea/
