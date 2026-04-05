@@ -40,12 +40,14 @@ pip install -r requirements.txt
 
 3. Создать файл .env и указать токен PandaScore:
 
+```bash
 PANDASCORE_TOKEN=your_token
 BASE_URL=https://api.pandascore.co
 SITE_NAME=Esports Matches
 SITE_URL=http://127.0.0.1:5000
 ORG_NAME=Esports Matches Portal
 ORG_LOGO=https://dummyimage.com/200x60/111827/ffffff&text=Esports+Matches
+```
 
 4. Запуск приложения:
 
